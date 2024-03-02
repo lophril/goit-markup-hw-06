@@ -132,6 +132,10 @@ a {
   border: none;
 }
 
+.nav-header-icon {
+  stroke: #2e2f42;
+}
+
 @media only screen and (min-width: 768px) {
   .nav-header-btn {
     display: none;
