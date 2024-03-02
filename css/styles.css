@@ -1,7 +1,3 @@
-hide {
-  display: none;
-}
-
 body {
   font-family: "Roboto", sans-serif;
   background-color: #fff;
@@ -879,7 +875,6 @@ a {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -1112,13 +1107,24 @@ a {
 }
 
 .mobile-menu {
-  background: #fff;
-  width: 320px;
-  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   position: fixed;
   top: 0;
   left: 0;
+  width: 320px;
+  height: 100%;
+  background-color: #fff;
   padding: 72px 24px 40px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1131,22 +1137,27 @@ a {
   position: absolute;
   top: 24px;
   right: 24px;
+  width: 24px;
+  height: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 24px;
-  height: 24px;
   border-radius: 50%;
   border: 1px solid #2e2f42;
+  background-color: #e7e9fc;
+  padding: 0;
+  cursor: pointer;
 }
+
 .mobile-menu-icon {
   stroke: #2e2f42;
 }
+
 .mobile-menu-list {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin-bottom: 168px;
+  margin-bottom: auto;
+}
+.mobile-menu-item:not(:last-child) {
+  margin-bottom: 40px;
 }
 
 .mobile-menu-link {
@@ -1159,17 +1170,19 @@ a {
   color: #2e2f42;
 }
 
-.accent {
+.menu-studio {
   color: #404bbf;
 }
+
 .mobile-menu-contacts {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
   margin-bottom: 48px;
 }
 
-.mobile-menu-contact-link {
+.contacts-list:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.menu-contact {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 20px;
@@ -1178,6 +1191,27 @@ a {
   color: #434455;
 }
 
-.phone {
+.menu-phone {
   color: #4d5ae5;
+}
+
+.menu-images {
+  display: flex;
+  gap: 40px;
+}
+.menu-link {
+  width: 40px;
+  height: 40px;
+}
+.menu-link-item {
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-link-item-color {
+  fill: #f4f4fd;
 }
